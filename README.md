@@ -1,8 +1,8 @@
-# Ticket System Platform
+# Ecommerce
 
-![Project Logo](ticket-system.png)
+![Project Logo](logo.jpeg)
 
-A comprehensive ticket system platform developed using Node.js and React.js, orchestrated with Docker containers and Kubernetes. This platform aims to streamline ticket management through microservices architecture.
+A comprehensive ecommerce system platform developed using Node.js and NextJs, orchestrated with Docker containers and Kubernetes. This platform aims to streamline ticket management through microservices architecture.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ A comprehensive ticket system platform developed using Node.js and React.js, orc
 ## Technologies
 
 - Node.js: Backend development.
-- React.js: Frontend user interface.
+- React.js: NextJs Frontend user interface.
 - Docker: Containerization of microservices.
 - Kubernetes: Container orchestration.
 - Ingress-nginx: Kubernetes Ingress Controller.
@@ -34,8 +34,8 @@ A comprehensive ticket system platform developed using Node.js and React.js, orc
 
 Follow these instructions to set up and run the project locally for development or testing purposes. Make sure you have Docker and Kubernetes installed.
 
-1. Clone the repository: `git clone https://github.com/edsphinx/ticketsystem.git`
-2. Navigate to the project folder: `cd ticketsystem`
+1. Clone the repository: `git clone https://github.com/edsphinx/ecommerce-microservices.git`
+2. Navigate to the project folder: `cd ecommerce-microservices`
 <!-- 3. [Add more setup steps as needed] -->
 
 ## Architecture
