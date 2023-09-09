@@ -29,14 +29,13 @@ export default function SignUp() {
 			email,
 			password,
 		},
+		onSuccess: () => router.push('/'),
 	});
 
 	const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		await doRequest();
-
-		router.push('/');
 	};
 
 	return (

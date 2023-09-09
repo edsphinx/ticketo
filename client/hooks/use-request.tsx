@@ -7,13 +7,14 @@ interface IRequest {
 	url: string;
 	method: Method | undefined;
 	body: any;
+	onSuccess: any;
 }
 
 interface Error {
 	message: string;
 }
 
-const useRequest = ({ url, method, body }: IRequest) => {
+const useRequest = ({ url, method, body, onSuccess }: IRequest) => {
 	const [errors, setErrors] = useState<any>();
 
 	const doRequest = async () => {
@@ -25,6 +26,11 @@ const useRequest = ({ url, method, body }: IRequest) => {
 			};
 			setErrors(null);
 			const response = await axios.request(config);
+
+			if (onSuccess) {
+				onSuccess(response.data);
+			}
+
 			return response.data;
 		} catch (err: any) {
 			setErrors(
