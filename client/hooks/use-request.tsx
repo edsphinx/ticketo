@@ -1,18 +1,8 @@
-import axios, { AxiosRequestConfig, Method } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-
-interface IRequest {
-	url: string;
-	method: Method | undefined;
-	body: any;
-	onSuccess: any;
-}
-
-interface Error {
-	message: string;
-}
+import { IRequest } from '@/interfaces/request-interface';
 
 const useRequest = ({ url, method, body, onSuccess }: IRequest) => {
 	const [errors, setErrors] = useState<any>();
