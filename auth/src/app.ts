@@ -7,8 +7,7 @@ import { currentUserRouter } from './routes/current-user';
 import { signinRouter } from './routes/signin';
 import { signoutRouter } from './routes/signout';
 import { signupRouter } from './routes/signup';
-import { errorHandler } from './middlewares/error-handler';
-import { NotFoundError } from './errors/not-found-error';
+import { errorHandler, NotFoundError } from '@efticketo/common';
 
 const app = express();
 // Followin is Added to ensure that express knows that is behind a proxy (ingress-nginx)
