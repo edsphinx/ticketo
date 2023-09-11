@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-depl
+  name: core-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth
+      app: core
   template:
     metadata:
       labels:
-        app: auth
+        app: core
     spec:
       containers:
-        - name: auth
-          # image: us.gcr.io/glass-badge-397122/auth
-          image: ofonseca/auth
+        - name: core
+          # image: us.gcr.io/glass-badge-397122/core
+          image: ofonseca/core
           env:
             - name: MONGO_URI
-              value: 'mongodb://auth-mongo-srv:27017/auth'
+              value: 'mongodb://core-mongo-srv:27017/core'
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
@@ -32,12 +32,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-srv
+  name: core-srv
 spec:
   selector:
-    app: auth
+    app: core
   ports:
-    - name: auth
+    - name: core
       protocol: TCP
       port: 3000
       targetPort: 3000

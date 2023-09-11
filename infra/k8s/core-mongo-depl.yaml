@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: core-mongo
+  template:
+    metadata:
+      labels:
+        app: core-mongo
+    spec:
+      containers:
+        - name: core-mongo
+          image: mongo
+          resources:
+            limits:
+              memory: '128Mi'
+              cpu: '500m'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: core-mongo-srv
+spec:
+  selector:
+    app: core-mongo
+  ports:
+    - name: db-core
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
