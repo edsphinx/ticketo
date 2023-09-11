@@ -17,8 +17,11 @@ spec:
           image: ofonseca/client
           # resources:
           #   limits:
-          #     memory: "128Mi"
-          #     cpu: "500m"
+          #     memory: 512Mi
+          #     cpu: '1'
+          #   requests:
+          #     memory: 256Mi
+          #     cpu: '0.2'
 ---
 apiVersion: v1
 kind: Service
